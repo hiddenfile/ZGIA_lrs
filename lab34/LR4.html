@@ -11,7 +11,14 @@
     <title>Hello, world!</title>
     <style>
         .ssa .input-group-text{
-            width: 140px;
+            padding-right: 3px;
+            padding-left: 3px;
+
+        }
+        #data td
+        {
+            text-align: center;
+            vertical-align: middle;
         }
     </style>
 
@@ -28,6 +35,7 @@
 
 
             <p>Для заданих альтернатив і заданих значень критеріїв виконати ранжирування з урахуванням вагових коефіцієнтів (альтернативи, значення критеріїв і вагові коефіцієнти задаються довільно).</p>
+            <p><a href="https://jobs.dou.ua/ratings/" target="_blank">https://jobs.dou.ua/ratings/</a> </p>
             <hr>
             <p class="mb-0">
                 <strong>Для цього необхідно:</strong>
@@ -53,105 +61,82 @@
     </div>
 </div>
 
-    <div>
-        <input type="button" onclick="additive(); setCells(Table)" value="Additive" />
-        <input type="button" onclick="multipl(); setCells(Table)" value="Multiple" />
-        <input type="button" onclick="cobbDuglas(); setCells(Table)" value="Cobb-Duglas" />
-        <input type="button" onclick="chastn(); setCells(Table)" value="Main" />
-        <input type="button" onclick="ideal(); setCells(Table); resortTable()" value="Ideal" />
-        <input type="button" onclick="paretto()" value="Paretto" />
-    </div>
-    <br />
-
-<!--    <table id="input">-->
-<!--        <thead>-->
-<!--            <tr>-->
-<!--                <th>Изображение</th>-->
-<!--                <th>Оснащение</th>-->
-<!--                <th>Эргономичность</th>-->
-<!--                <th>Звук</th>-->
-<!--                <th>Энергопотр</th>-->
-<!--                <th>Диагональ</th>-->
-<!--                <th>Main</th>-->
-<!--            </tr>-->
-<!--        </thead>-->
-<!--        <tbody>-->
-<!--            <tr>-->
-<!--                <td><input class="dtInput" onchange="Alfa[0] = +$(this).val(); Beta[0] = +$(this).val();" /></td>-->
-<!--                <td><input class="dtInput" onchange="Alfa[1] = +$(this).val(); Beta[1] = +$(this).val();" /></td>-->
-<!--                <td><input class="dtInput" onchange="Alfa[2] = +$(this).val(); Beta[2] = +$(this).val();" /></td>-->
-<!--                <td><input class="dtInput" onchange="Alfa[3] = +$(this).val(); Beta[3] = +$(this).val();" /></td>-->
-<!--                <td><input class="dtInput" onchange="Alfa[4] = +$(this).val(); Beta[4] = +$(this).val();" /></td>-->
-<!--                <td><input class="dtInput" onchange="Alfa[5] = +$(this).val(); Beta[5] = +$(this).val();" /></td>-->
-<!--                <td><input id="mainInput" value="6" /></td>-->
-<!--            </tr>-->
-<!--        </tbody>-->
-<!--    </table>-->
-
     <table id="data" class="table">
         <thead>
-        <tr>
+        <tr class="ssa">
+            <th>
+
+            </th>
+
             <th>
                 <div class="input-group mb-3">
-                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon71">Main</span></div>
-                    <input  id="mainInput" value="6" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon71">Главный</span></div>
+                    <input  id="mainInput" value="3" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
 
             </th>
-            <th>
-
-            </th>
 
             <th>
                 <div class="input-group mb-3">
-                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon21">Изображение</span></div>
+                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon21">Общий балл</span></div>
                     <input onchange="Alfa[0] = +$(this).val(); Beta[0] = +$(this).val();" type="text" class="form-control dtInput" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
             </th>
             <th>
                 <div class="input-group mb-3">
-                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon11">Оснащение</span></div>
+                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon11">Условия труда</span></div>
                     <input onchange="Alfa[1] = +$(this).val(); Beta[0] = +$(this).val();"  type="text" class="form-control dtInput" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
             </th>
             <th>
                 <div class="input-group mb-3">
-                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon31">Эргономичность</span></div>
+                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon31">Карьера</span></div>
                     <input onchange="Alfa[2] = +$(this).val(); Beta[0] = +$(this).val();"type="text" class="form-control dtInput" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
             </th>
             <th>
 
                 <div class="input-group mb-3">
-                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon41">Звук</span></div>
+                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon41">Проект</span></div>
                     <input onchange="Alfa[3] = +$(this).val(); Beta[0] = +$(this).val();"  type="text" class="form-control dtInput" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
 
             </th>
             <th>
                 <div class="input-group mb-3">
-                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon51">Энергопотр</span></div>
+                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon51">Лояльность</span></div>
                     <input onchange="Alfa[4] = +$(this).val(); Beta[0] = +$(this).val();" type="text" class="form-control dtInput" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
             </th>
             <th>
                 <div class="input-group mb-3">
-                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon61">Диагональ</span></div>
+                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon61">Компенсация</span></div>
                     <input onchange="Alfa[5] = +$(this).val(); Beta[0] = +$(this).val();" type="text" class="form-control dtInput" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
             </th>
             <th>
-                Func
+                
             </th>
         </tr>
         </thead>
         <tbody></tbody>
     </table>
+<p id="paretto"></p>
 
-    <p id="paretto"></p>
+
+<div>
+    <input type="button" class="btn btn-primary" onclick="additive(); setCells(Table)" value="Аддитивний" />
+    <input type="button" class="btn btn-primary" onclick="multipl(); setCells(Table)" value="Мультиплікативний" />
+    <input type="button" class="btn btn-primary" onclick="cobbDuglas(); setCells(Table)" value="Кобба - Дугласа " />
+    <input type="button" class="btn btn-primary" onclick="chastn(); setCells(Table)" value="Головний" />
+    <input type="button" class="btn btn-primary" onclick="ideal(); setCells(Table); resortTable()" value="Iдеальний" />
+    <input type="button" class="btn btn-primary" onclick="paretto()" value="Парето" />
+</div>
+<br />
 
 
-    <!-- Optional JavaScript -->
+
+<!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

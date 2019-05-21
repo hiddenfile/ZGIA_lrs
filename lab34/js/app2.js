@@ -130,107 +130,107 @@ function getData() {
 
     headers = ["Модель", "Цена", "Изображение", "Оснащение", "Эргономичность", "Звук", "Энергопотр", "Диагональ", "F"];
 
-    cells[2][0] = ("1. LG 55UGB870v");
-    cells[3][0] = ("2. Panas TX-55CRW854");
-    cells[4][0] = ("3. LG 55EG960v");
-    cells[5][0] = ("4. Sony KD-55X8505C");
-    cells[6][0] = ("5. Samsung UE55JS85D0");
-    cells[7][0] = ("6. LG 49UF8519");
-    cells[8][0] = ("7. Samsung UE48JS90D0");
-    cells[9][0] = ("8. Philips 55PUS7150");
-    cells[10][0] = ("9. Panasonic TX-55CRW734");
-    cells[2][1] = ("109 500");
-    cells[3][1] = ("210 000");
-    cells[4][1] = ("230 000");
-    cells[5][1] = ("109 500");
-    cells[6][1] = ("139 000");
-    cells[7][1] = ("69 000");
-    cells[8][1] = ("115 500");
-    cells[9][1] = ("78 000");
-    cells[10][1] = ("109 000");
+    cells[2][1] = ("Infopulse");
+    cells[3][1] = ("SoftServe");
+    cells[4][1] = ("GlobalLogic");
+    cells[5][1] = ("EPAM");
+    cells[6][1] = ("Ciklum");
+    cells[7][1] = ("Luxoft");
+    cells[8][1] = ("Genesis");
+    cells[9][1] = ("Autodoc");
+    cells[10][1] = ("Intellias");
+    cells[2][0] = ("1");
+    cells[3][0] = ("2");
+    cells[4][0] = ("3");
+    cells[5][0] = ("4");
+    cells[6][0] = ("5");
+    cells[7][0] = ("6");
+    cells[8][0] = ("7");
+    cells[9][0] = ("8");
+    cells[10][0] = ("9");
 
     cells[0][0] = ("aj");
 
-    Table[0][0] = 99.0;
-    Table[0][1] = 91.0;
-    Table[0][2] = 100.0;
+    Table[0][0] = 91.0;
+    Table[0][1] = 88.0;
+    Table[0][2] = 91.0;
     Table[0][3] = 90.0;
-    Table[0][4] = 99.0;
-    Table[0][5] = 55.0;
+    Table[0][4] = 90.0;
+    Table[0][5] = 95.0;
     //1700
-    Table[1][0] = 97.0;
-    Table[1][1] = 94.0;
-    Table[1][2] = 94.0;
-    Table[1][3] = 100.0;
-    Table[1][4] = 73.0;
-    Table[1][5] = 55.0;
+    Table[1][0] = 88.0;
+    Table[1][1] = 82.0;
+    Table[1][2] = 91.0;
+    Table[1][3] = 89.0;
+    Table[1][4] = 87.0;
+    Table[1][5] = 92.0;
     //2600
-    Table[2][0] = 100.0;
-    Table[2][1] = 86.0;
-    Table[2][2] = 100.0;
-    Table[2][3] = 80.0;
-    Table[2][4] = 68.0;
-    Table[2][5] = 55.0;
+    Table[2][0] = 85.0;
+    Table[2][1] = 84.0;
+    Table[2][2] = 88.0;
+    Table[2][3] = 81.0;
+    Table[2][4] = 83.0;
+    Table[2][5] = 90.0;
     //1600
-    Table[3][0] = 93.0;
-    Table[3][1] = 100.0;
-    Table[3][2] = 78.0;
-    Table[3][3] = 88.0;
-    Table[3][4] = 96.0;
-    Table[3][5] = 55.0;
+    Table[3][0] = 85.0;
+    Table[3][1] = 83.0;
+    Table[3][2] = 84.0;
+    Table[3][3] = 85.0;
+    Table[3][4] = 83.0;
+    Table[3][5] = 87.0;
     //9800X
-    Table[4][0] = 91.0;
-    Table[4][1] = 97.0;
-    Table[4][2] = 79.0;
-    Table[4][3] = 90.0;
-    Table[4][4] = 94.0;
-    Table[4][5] = 55.0;
+    Table[4][0] = 81.0;
+    Table[4][1] = 75.0;
+    Table[4][2] = 86.0;
+    Table[4][3] = 75.0;
+    Table[4][4] = 83.0;
+    Table[4][5] = 85.0;
     //9700
-    Table[5][0] = 97.0;
-    Table[5][1] = 82.0;
-    Table[5][2] = 73.0;
-    Table[5][3] = 95.0;
-    Table[5][4] = 81.0;
-    Table[5][5] = 49.0;
+    Table[5][0] = 85.0;
+    Table[5][1] = 87.0;
+    Table[5][2] = 87.0;
+    Table[5][3] = 82.0;
+    Table[5][4] = 82.0;
+    Table[5][5] = 86.0;
     //8700
-    Table[6][0] = 91.0;
-    Table[6][1] = 98.0;
-    Table[6][2] = 79.0;
-    Table[6][3] = 59.0;
-    Table[6][4] = 72.0;
-    Table[6][5] = 48.0;
+    Table[6][0] = 96.0;
+    Table[6][1] = 95.0;
+    Table[6][2] = 96.0;
+    Table[6][3] = 95.0;
+    Table[6][4] = 95.0;
+    Table[6][5] = 98.0;
     //8600
-    Table[7][0] = 88.0;
-    Table[7][1] = 90.0;
-    Table[7][2] = 85.0;
-    Table[7][3] = 54.0;
-    Table[7][4] = 90.0;
-    Table[7][5] = 55.0;
+    Table[7][0] = 94.0;
+    Table[7][1] = 93.0;
+    Table[7][2] = 95.0;
+    Table[7][3] = 91.0;
+    Table[7][4] = 94.0;
+    Table[7][5] = 97.0;
     //8400
     Table[8][0] = 92.0;
-    Table[8][1] = 75.0;
-    Table[8][2] = 83.0;
-    Table[8][3] = 76.0;
-    Table[8][4] = 93.0;
-    Table[8][5] = 55.0;
+    Table[8][1] = 91.0;
+    Table[8][2] = 95.0;
+    Table[8][3] = 89.0;
+    Table[8][4] = 89.0;
+    Table[8][5] = 94.0;
 
     for (var i = 0; i < 9; ++i) {
         for (n = 0; n < 6; ++n) {
             this.Data[i][n] = this.Table[i][n];
         }
     }
-    Alfa[0] = 0.5;
-    Beta[0] = 0.5;
-    Alfa[1] = 0.25;
-    Beta[1] = 0.25;
-    Alfa[2] = 0.15;
-    Beta[2] = 0.15;
-    Alfa[3] = 0.05;
+    Alfa[0] = 0.6;
+    Beta[0] = 0.4;
+    Alfa[1] = 0.13;
+    Beta[1] = 0.32;
+    Alfa[2] = 0.16;
+    Beta[2] = 0.17;
+    Alfa[3] = 0.04;
     Beta[3] = 0.05;
-    Alfa[4] = 0.05;
-    Beta[4] = 0.05;
-    Alfa[5] = 0.05;
-    Beta[5] = 0.05;
+    Alfa[4] = 0.06;
+    Beta[4] = 0.07;
+    Alfa[5] = 0.08;
+    Beta[5] = 0.09;
 
     for (n = 0; n < 6; ++n) {
         cells[0][n + 2] = "" + (Alfa[n]);
@@ -422,9 +422,9 @@ function paretto() {
             }
             res = 0;
         }
-        outLabel = "  / " + outLabel;
+        outLabel = " | " + outLabel;
     }
-    outLabel = " Ranges of Paretto: " + outLabel;
-
-    $('#paretto').html(outLabel);
+    // outLabel;
+    alert(outLabel);
+    //$('#paretto').html(outLabel);
 }
