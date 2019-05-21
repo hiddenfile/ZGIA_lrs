@@ -1,0 +1,162 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        .ssa .input-group-text{
+            width: 140px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Завдання 4. Багатокритерійна оптимізація</h4>
+
+
+
+
+            <p>Для заданих альтернатив і заданих значень критеріїв виконати ранжирування з урахуванням вагових коефіцієнтів (альтернативи, значення критеріїв і вагові коефіцієнти задаються довільно).</p>
+            <hr>
+            <p class="mb-0">
+                <strong>Для цього необхідно:</strong>
+                </br>
+
+                Нормалізувати критерії і вагу критеріїв.
+                </br>
+                Проранжирувати альтернативи по суперкритеріям:
+                </br>
+                a)аддитивному
+                </br>
+                b)мультиплікативному
+                </br>
+                c)Кобба - Дугласа
+                </br>
+                Застосувати метод головного приватного критерія, вважаючи, що по важливості критерії розташовані по зменшеню F1,F2,F3…
+                </br>
+                Проранжирувати альтернативи по методу ідеальної точки, використовуючи евклідову міру k=2
+                </br>
+                Виконати ранжирування по Парето, використовуючи таблицю переваг
+            </p>
+        </div>
+    </div>
+</div>
+
+    <div>
+        <input type="button" onclick="additive(); setCells(Table)" value="Additive" />
+        <input type="button" onclick="multipl(); setCells(Table)" value="Multiple" />
+        <input type="button" onclick="cobbDuglas(); setCells(Table)" value="Cobb-Duglas" />
+        <input type="button" onclick="chastn(); setCells(Table)" value="Main" />
+        <input type="button" onclick="ideal(); setCells(Table); resortTable()" value="Ideal" />
+        <input type="button" onclick="paretto()" value="Paretto" />
+    </div>
+    <br />
+
+<!--    <table id="input">-->
+<!--        <thead>-->
+<!--            <tr>-->
+<!--                <th>Изображение</th>-->
+<!--                <th>Оснащение</th>-->
+<!--                <th>Эргономичность</th>-->
+<!--                <th>Звук</th>-->
+<!--                <th>Энергопотр</th>-->
+<!--                <th>Диагональ</th>-->
+<!--                <th>Main</th>-->
+<!--            </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--            <tr>-->
+<!--                <td><input class="dtInput" onchange="Alfa[0] = +$(this).val(); Beta[0] = +$(this).val();" /></td>-->
+<!--                <td><input class="dtInput" onchange="Alfa[1] = +$(this).val(); Beta[1] = +$(this).val();" /></td>-->
+<!--                <td><input class="dtInput" onchange="Alfa[2] = +$(this).val(); Beta[2] = +$(this).val();" /></td>-->
+<!--                <td><input class="dtInput" onchange="Alfa[3] = +$(this).val(); Beta[3] = +$(this).val();" /></td>-->
+<!--                <td><input class="dtInput" onchange="Alfa[4] = +$(this).val(); Beta[4] = +$(this).val();" /></td>-->
+<!--                <td><input class="dtInput" onchange="Alfa[5] = +$(this).val(); Beta[5] = +$(this).val();" /></td>-->
+<!--                <td><input id="mainInput" value="6" /></td>-->
+<!--            </tr>-->
+<!--        </tbody>-->
+<!--    </table>-->
+
+    <table id="data" class="table">
+        <thead>
+        <tr>
+            <th>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon71">Main</span></div>
+                    <input  id="mainInput" value="6" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+
+            </th>
+            <th>
+
+            </th>
+
+            <th>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon21">Изображение</span></div>
+                    <input onchange="Alfa[0] = +$(this).val(); Beta[0] = +$(this).val();" type="text" class="form-control dtInput" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+            </th>
+            <th>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon11">Оснащение</span></div>
+                    <input onchange="Alfa[1] = +$(this).val(); Beta[0] = +$(this).val();"  type="text" class="form-control dtInput" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+            </th>
+            <th>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon31">Эргономичность</span></div>
+                    <input onchange="Alfa[2] = +$(this).val(); Beta[0] = +$(this).val();"type="text" class="form-control dtInput" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+            </th>
+            <th>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon41">Звук</span></div>
+                    <input onchange="Alfa[3] = +$(this).val(); Beta[0] = +$(this).val();"  type="text" class="form-control dtInput" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+
+            </th>
+            <th>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon51">Энергопотр</span></div>
+                    <input onchange="Alfa[4] = +$(this).val(); Beta[0] = +$(this).val();" type="text" class="form-control dtInput" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+            </th>
+            <th>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon61">Диагональ</span></div>
+                    <input onchange="Alfa[5] = +$(this).val(); Beta[0] = +$(this).val();" type="text" class="form-control dtInput" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+            </th>
+            <th>
+                Func
+            </th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <p id="paretto"></p>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js/app2.js"></script>
+
+</body>
+</html>
